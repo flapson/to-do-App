@@ -14,11 +14,11 @@ while True:
         todo = user_action[4:]
 
         todos = functions.get_todos()
-        
+
         todos.append(todo + "\n")
 
         functions.write_todos(todos)
-    
+
     elif user_action.startswith("show"):
         todos = functions.get_todos()
 
@@ -45,7 +45,7 @@ while True:
     elif user_action.startswith("complete"):
         try:
             number = int(user_action[9:])
-            
+
             todos = functions.get_todos()
 
             index = number - 1
@@ -53,7 +53,7 @@ while True:
             todos.pop(index)
 
             functions.write_todos(todos)
-            
+
             message = f"Todo {todo_to_remove} was removed from the list."
             print(message)
         except IndexError:
